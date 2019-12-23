@@ -1,4 +1,4 @@
-package com.sicredi.assembleia.domain;
+package com.sicredi.assembleia.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
