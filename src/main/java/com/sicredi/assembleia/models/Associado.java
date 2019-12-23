@@ -24,5 +24,5 @@ import java.io.Serializable;
 
         @Column(name = "voto")
         @NotNull
-        private boolean voto;
+        private String voto;
     }
