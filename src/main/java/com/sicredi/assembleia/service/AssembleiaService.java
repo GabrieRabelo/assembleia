@@ -14,4 +14,9 @@ public class AssembleiaService {
     public Assembleia registrarAssembleia(Assembleia assembleia) {
         return assembleiaRepository.save(assembleia);
     }
+
+    public Iterable<Assembleia> findAll() {
+        return assembleiaRepository.findAll();
+    }
+
 }
