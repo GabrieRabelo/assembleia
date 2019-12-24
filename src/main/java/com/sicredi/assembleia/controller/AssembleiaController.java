@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class AssembleiaController {
 
     @Autowired
-    private AssembleiaService assembleiaMainService;
+    private AssembleiaService assembleiaService;
 
     public AssembleiaController(AssembleiaService assembleiaMainService){
-        this.assembleiaMainService = assembleiaMainService;
+        this.assembleiaService = assembleiaMainService;
     }
 
     @PostMapping("/registrar")
     public Assembleia registrarAssembleia() {
         Assembleia assembleia = new Assembleia();
-        return AssembleiaService.registrarAssembleia(assembleia);
+        return assembleiaService.registrarAssembleia(assembleia);
     }
 
 }
