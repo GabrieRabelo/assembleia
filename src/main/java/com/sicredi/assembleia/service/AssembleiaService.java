@@ -5,6 +5,8 @@ import com.sicredi.assembleia.repository.AssembleiaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AssembleiaService {
 
@@ -19,4 +21,7 @@ public class AssembleiaService {
         return assembleiaRepository.findAll();
     }
 
+    public Optional<Assembleia> findById(Long id) {
+        return assembleiaRepository.findById(id);
+    }
 }
