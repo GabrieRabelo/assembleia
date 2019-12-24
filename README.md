@@ -1,6 +1,6 @@
-# sicredi-assembleia
+# assembleia
 **Dependencias**
-* Java 11
+* Java 8
 * PostgreSQL 11.5
 
 **Configurando banco de dados local**
