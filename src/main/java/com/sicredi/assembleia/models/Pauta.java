@@ -1,16 +1,12 @@
 package com.sicredi.assembleia.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "pauta")
 public class Pauta {
@@ -30,5 +26,29 @@ public class Pauta {
 
     @OneToMany
     @JoinColumn(name = "associados")
-    private List<Associado> Associados = new ArrayList<>();
+    private List<Associado> associados = new ArrayList<>();
+
+    @JsonCreator
+    public Pauta() { }
+
+    @JsonCreator
+    public Pauta(
+            @JsonProperty("titulo") String titulo,
+            @JsonProperty("descricao") String descricao,
+            @JsonProperty("assembleia") Assembleia assembleia
+            ) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.assembleia = assembleia;
+    }
+
+    public String getTitulo() { return this.titulo; }
+
+    public String getDescricao() { return this.descricao; }
+
+    public Assembleia getAssembleia() { return this.assembleia; }
+
+    public List<Associado> getAssociados() { return this.associados; }
+
+    public void setAssociados(Associado associado) { this.associados.add(associado); }
 }
