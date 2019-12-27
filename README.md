@@ -14,3 +14,9 @@ Para criar um banco de dados local com postgreSQL instalado rode o seguinte coma
 Para inicializar a aplicação basta utilizar o comando
 
 `./gradlew bootrun`
+
+**Documentação da API**
+
+Para ter acesso aos endpoints basta entrar na URL 
+
+`/swagger-ui.html#/`
