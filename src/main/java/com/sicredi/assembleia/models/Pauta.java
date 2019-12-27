@@ -24,9 +24,8 @@ public class Pauta {
     private String descricao;
 
     @NotNull
-    @OneToOne
     @JoinColumn(name = "assembleia_id")
-    private Assembleia assembleia;
+    private Long assembleia_id;
 
     @OneToMany
     @JoinColumn(name = "associados")
@@ -39,18 +38,18 @@ public class Pauta {
     public Pauta(
             @JsonProperty("titulo") String titulo,
             @JsonProperty("descricao") String descricao,
-            @JsonProperty("assembleia") Assembleia assembleia
+            @JsonProperty("assembleia") Long assembleia_id
             ) {
         this.titulo = titulo;
         this.descricao = descricao;
-        this.assembleia = assembleia;
+        this.assembleia_id = assembleia_id;
     }
 
     public String getTitulo() { return this.titulo; }
 
     public String getDescricao() { return this.descricao; }
 
-    public Assembleia getAssembleia() { return this.assembleia; }
+    public Long getAssembleiaId() { return this.assembleia_id; }
 
     public List<Associado> getAssociados() { return this.associados; }
 
