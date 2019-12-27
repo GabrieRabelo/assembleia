@@ -1,7 +1,6 @@
 package com.sicredi.assembleia.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -29,7 +28,6 @@ public class Pauta {
     private Long assembleia_id;
 
     @OneToMany
-    @JsonIgnore
     @JoinColumn(name = "associados")
     private List<Associado> associados = new ArrayList<>();
 
@@ -51,7 +49,6 @@ public class Pauta {
 
     public String getDescricao() { return this.descricao; }
 
-    @JsonIgnore
     public Long getAssembleiaId() { return this.assembleia_id; }
 
     public List<Associado> getAssociados() { return this.associados; }

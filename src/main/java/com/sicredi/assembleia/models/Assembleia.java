@@ -1,7 +1,5 @@
 package com.sicredi.assembleia.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +12,6 @@ public class Assembleia {
     private Long id;
 
     @OneToMany
-    @JsonIgnore
     @JoinColumn(name = "assembleia_id")
     private List<Pauta> pautas = new ArrayList<>();
 
