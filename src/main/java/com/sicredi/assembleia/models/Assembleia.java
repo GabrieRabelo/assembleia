@@ -12,7 +12,7 @@ public class Assembleia {
     private Long id;
 
     @OneToMany
-    @JoinColumn(name = "pauta_id")
+    @JoinColumn(name = "assembleia_id")
     private List<Pauta> pautas = new ArrayList<>();
 
     public Assembleia () {}
