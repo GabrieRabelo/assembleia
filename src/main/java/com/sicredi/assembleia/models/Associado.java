@@ -21,23 +21,25 @@ public class Associado {
     private String voto;
 
     @NotNull
-    @JoinColumn(name = "associado_id")
-    private Long associado_id;
+    @JoinColumn(name = "pauta_id")
+    private Long pauta_id;
 
     @JsonCreator
     public Associado() { }
 
     public Associado(
             @JsonProperty("cpf") String cpf,
-            @JsonProperty("voto") String voto
+            @JsonProperty("voto") String voto,
+            @JsonProperty("pauta") Long pauta_id
     ) {
         this.cpf = cpf;
         this.voto = voto;
+        this.pauta_id = pauta_id;
     }
 
     public String getCpf() { return this.cpf; }
 
     public String getVoto() { return this.voto; }
 
-    public Long getAssociado_id() { return this.associado_id; }
+    public Long getPauta_id() { return this.pauta_id; }
 }
