@@ -26,7 +26,7 @@ public class Pauta {
     private Long assembleia_id;
 
     @OneToMany
-    @JoinColumn(name = "associado_id")
+    @JoinColumn(name = "pauta_id")
     private List<Associado> associados = new ArrayList<>();
 
     @JsonCreator
