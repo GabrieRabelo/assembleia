@@ -20,6 +20,10 @@ public class Associado {
     @NotNull
     private String voto;
 
+    @NotNull
+    @JoinColumn(name = "associado_id")
+    private Long associado_id;
+
     @JsonCreator
     public Associado() { }
 
@@ -34,4 +38,6 @@ public class Associado {
     public String getCpf() { return this.cpf; }
 
     public String getVoto() { return this.voto; }
+
+    public Long getAssociado_id() { return this.associado_id; }
 }

@@ -26,7 +26,7 @@ public class Pauta {
     private Long assembleia_id;
 
     @OneToMany
-    @JoinColumn(name = "associados")
+    @JoinColumn(name = "associado_id")
     private List<Associado> associados = new ArrayList<>();
 
     @JsonCreator
@@ -42,6 +42,8 @@ public class Pauta {
         this.descricao = descricao;
         this.assembleia_id = assembleia_id;
     }
+
+    public Long getId() { return this.id; }
 
     public String getTitulo() { return this.titulo; }
 
