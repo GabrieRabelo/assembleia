@@ -14,11 +14,9 @@ public class Associado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "cpf")
     @NotNull
     private String cpf;
 
-    @Column(name = "voto")
     @NotNull
     private String voto;
 

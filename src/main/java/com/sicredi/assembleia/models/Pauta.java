@@ -9,18 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "pauta")
+@Table(name = "pautas")
 public class Pauta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    @Column(name = "titulo")
     private String titulo;
 
     @NotNull
-    @Column(name = "descricao")
     private String descricao;
 
     @NotNull
