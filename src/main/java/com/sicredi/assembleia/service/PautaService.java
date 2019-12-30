@@ -23,4 +23,25 @@ public class PautaService {
     public Optional<Pauta> findById(Long id) {
         return pautaRepository.findById(id);
     }
+
+    public long negativeCounter(Long pautaId) {
+        if(findById(pautaId).isPresent()){
+            return findById(pautaId).get().getAssociados()
+                    .stream()
+                    .filter(p -> p.getVoto().equalsIgnoreCase("sim"))
+                    .count();
+        }
+        return 0;
+    }
+
+    public long positiveCounter(Long pautaId) {
+        if(findById(pautaId).isPresent()){
+            return findById(pautaId).get().getAssociados()
+                    .stream()
+                    .filter(p -> p.getVoto().equalsIgnoreCase("nao"))
+                    .count();
+        }
+        return 0;
+    }
+
 }
